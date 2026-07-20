@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="display:flex;gap:12px;">
+  <div class="card" style="flex:1">
+    <h3>Total Employees</h3>
+    <p>{{ stats.total_employees }}</p>
+  </div>
+  <div class="card" style="flex:1">
+    <h3>Total Projects</h3>
+    <p>{{ stats.total_projects }}</p>
+  </div>
+  <div class="card" style="flex:1">
+    <h3>Total Coding Skills</h3>
+    <p>{{ stats.total_coding }}</p>
+  </div>
+  <div class="card" style="flex:1">
+    <h3>Total Tools</h3>
+    <p>{{ stats.total_tools }}</p>
+  </div>
+</div>
+{% endblock %}
