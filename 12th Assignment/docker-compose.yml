@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: private_gpt_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=super-secret-production-key-change-me
+      - DATABASE_URL=sqlite+aiosqlite:///./storage/private_gpt.db
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - EMBEDDING_MODEL=text-embedding-3-small
+      - LLM_MODEL=gpt-4o-mini
+      - STORAGE_DIR=./storage
+    volumes:
+      - backend_storage:/app/storage
+
+  frontend:
+    build: ./frontend
+    container_name: private_gpt_frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+
+volumes:
+  backend_storage:

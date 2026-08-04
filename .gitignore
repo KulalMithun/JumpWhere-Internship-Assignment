@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+env/
+ENV/
+
+# Next.js build output
+.next/
+out/
+build/
+dist/
+
+# Python cache & test output
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment files (keep example)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# Database & logs
+*.db
+*.sqlite3
+*.log
+logs/
+
+# Storage & temporary directories
+storage/
+tmp/
+temp/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
